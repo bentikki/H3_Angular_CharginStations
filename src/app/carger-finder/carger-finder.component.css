@@ -1,0 +1,26 @@
+.nearest-bg {
+    position: relative;
+    min-height:100%;
+    padding: 20px 0;
+    padding-top: 80px;
+}
+.nearest-bg .hide{
+    position: absolute;
+    left: 70px;
+    top:20px;
+    padding: 20px;
+    font-size: 2em;
+    color: var(--main-color);
+}
+.main-bg > div{
+    min-height: 100vh;
+}
+
+.hideDetails{
+    position: absolute;
+    left: 15px;
+    top: 0;
+    padding: 0 10px;
+    font-size: 2em;
+    z-index: 100;
+}

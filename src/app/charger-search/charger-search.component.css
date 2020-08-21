@@ -1,0 +1,86 @@
+.searchmap-con {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-spacing: 5px;
+}
+.loading-con {
+    position: absolute;
+    z-index: 100;
+    width: 20%;
+    left: 40%;
+    margin-top: 5px;
+    padding: 5px 10px;
+
+    background-color: var(--main-color);
+    color: #000;
+    text-shadow: 4px 4px 10px rgba(150, 150, 150, 1);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+    -webkit-box-shadow: 0px 6px 21px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 21px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 21px -1px rgba(0,0,0,0.75);
+    
+}
+
+.search-bg {
+    display:table-row;
+    z-index: 100;
+}
+.search-bg > h1{
+    font-weight: bold;
+    font-size: 38px;
+    color: var(--main-color);
+    padding-bottom: 10px;
+}
+.search-location-group input{
+    height: 45px;
+    font-size: 1.2em;
+    padding-left: 20px;
+}
+.search-location-group .input-group-text {
+    width: 50px;
+    font-size: 1.2em;
+    padding-left: 15px;
+}
+
+.map-con {
+    position: fixed;
+    top:0;
+    left: 0;
+    margin-top: 12vh;
+    height: 88vh;
+    width: 100vw;
+}
+agm-map {
+    height: 100%;
+    width: 100%;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media (max-width: 576px) { 
+    .search-bg {
+        padding: -15px;
+    }
+
+    .search-location-group{
+        position: relative;
+        z-index: 100;
+    }
+    .search-location-group input{
+        position: relative;
+        z-index: 100;
+        height: 7vh;
+        border-radius: 0;
+    }
+
+    .map-con {
+        position: fixed;
+        top:0;
+        left: 0;
+        margin-top: 7vh;
+        height: 93vh;
+        width: 100vw;
+    }
+ }

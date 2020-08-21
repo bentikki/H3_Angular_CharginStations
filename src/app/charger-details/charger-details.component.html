@@ -1,0 +1,90 @@
+<div class="details-bg">
+    
+    <div class="adressInfo row">
+        <div class="col-2 iconContainer">
+            <i class="fa fa-home" aria-hidden="true"></i> 
+        </div>
+
+        <div class="col-10 infoContainer">
+            <h3 class="title">
+                {{node.AddressInfo.Title}}
+            </h3>   
+            <p>{{node.AddressInfo.AddressLine1}}</p>
+            <p>{{node.AddressInfo.Town}}</p>
+            <p>{{node.AddressInfo.Postcode}}</p>
+            <p class="country"><i class="fa fa-globe" aria-hidden="true"></i> {{node.AddressInfo.Country.Title}}</p>
+        </div> 
+    </div>
+
+    <div class="row">
+        <div class="col-2 iconContainer">
+            <i class="fa fa-phone" aria-hidden="true"></i> 
+        </div>
+
+        <div class="col-10 infoContainer">
+            <h3 class="title" *ngIf="node.AddressInfo.ContactTelephone1">
+                {{node.AddressInfo.ContactTelephone1}}
+            </h3>   
+            <h3 class="title" *ngIf="!node.AddressInfo.ContactTelephone1">
+                No contact info
+            </h3>  
+
+        </div> 
+    </div>
+
+    <div class="row">
+        <div class="col-2 iconContainer">
+            <i class="fa fa-lock" aria-hidden="true"></i> 
+        </div>
+
+        <div class="col-10 infoContainer">
+            <h3 class="title">
+                Access information
+            </h3>   
+            <p>
+                Pay at location: 
+                <i class="fa " aria-hidden="true"
+                [ngClass]="{'fa-check': node.UsageType.IsPayAtLocation, 'fa-times': !node.UsageType.IsPayAtLocation}"></i>
+            </p>  
+
+            <p>
+                Requires membership: 
+                <i class="fa " aria-hidden="true"
+                [ngClass]="{'fa-check': node.UsageType.IsMembershipRequired, 'fa-times': !node.UsageType.IsMembershipRequired}"></i>
+            </p>  
+
+            <p>
+                Requires access key: 
+                <i class="fa " aria-hidden="true"
+                [ngClass]="{'fa-check': node.UsageType.IsAccessKeyRequired, 'fa-times': !node.UsageType.IsAccessKeyRequired}"></i>
+            </p>  
+
+        </div> 
+    </div>
+
+    <div class="row">
+        <div class="col-2 iconContainer">
+            <i class="fa fa-plug" aria-hidden="true"></i> 
+        </div>
+
+        <div class="col-10 infoContainer">
+            <h3 class="title">
+                Charging stations
+            </h3>  
+            <p>Number of charging stations: {{node.Connections.length}}</p>
+            <div class="chargingStationContainer" *ngFor="let station of node.Connections; let i = index">
+                <p class="stationNum">Station: {{i + 1}}</p>
+                <p>Type: <strong>{{station.ConnectionType.Title}}</strong></p>
+                <p>Power: <strong>{{station.PowerKW}} kw</strong></p>
+                <p>Current: <strong>{{station.CurrentType.Title}}</strong></p>
+                <p>
+                    Fast charge: 
+                    <i class="fa " aria-hidden="true"
+                    [ngClass]="{'fa-check': station.Level.IsFastChargeCapable, 'fa-times': !station.Level.IsFastChargeCapable}"></i>
+                </p> 
+            </div>
+        </div> 
+    </div>
+
+
+</div>

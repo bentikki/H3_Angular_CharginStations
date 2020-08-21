@@ -1,0 +1,7 @@
+<div class="childNode" (click)="showDetails(node)">
+    <p class="title">{{node.AddressInfo.Title}}</p>
+    <p class="address">{{node.AddressInfo.AddressLine1}}</p>
+    <p class="town">{{node.AddressInfo.Town}}</p>
+    <p class="zip">{{node.AddressInfo.Postcode}}</p>
+    <p class="distance">{{node.AddressInfo.Distance | number : '1.1-1'}} km <i class="fa fa-map-marker" aria-hidden="true"></i></p>
+</div>

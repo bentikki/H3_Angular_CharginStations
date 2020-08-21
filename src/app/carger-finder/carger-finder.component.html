@@ -1,0 +1,34 @@
+<div class="container-fluid">
+
+    <div class="row no-gutters main-bg">
+
+        <div class="col-md-2 d-sm-block d-none nearest-con">
+            <div class="nearest-bg" >
+                <span class="hide" (click)="hideNearest()">
+                    <i class="fa" aria-hidden="true" 
+                    [ngClass]="{'fa-plus': !showNearest, 'fa-minus': showNearest}"></i>
+                </span>
+               
+                <app-charger-list 
+                    [hidden]="!showNearest" 
+                    (selectDetails)="nodeCallback($event)">
+                </app-charger-list>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-7" >
+            <app-charger-search (selectDetails)="nodeCallback($event)"></app-charger-search>
+        </div>
+
+        <div class="col-md-3" *ngIf="showDetails">
+
+            <span class="hideDetails" (click)="hideDetails()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+
+            <app-charger-details 
+                [node]="selectedNodeDetail"></app-charger-details>
+        </div>
+    </div>
+   
+</div>

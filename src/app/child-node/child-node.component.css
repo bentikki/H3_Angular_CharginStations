@@ -1,0 +1,31 @@
+.childNode {
+    background-color: var(--main-color);
+    padding: 10px;
+    margin-bottom:10px ;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+
+    -webkit-box-shadow: 6px 6px 21px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 21px -1px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 21px -1px rgba(0,0,0,0.75);
+    
+
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.childNode p {
+    margin:5px 0;
+}
+
+.childNode .title {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+
+.childNode .distance {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align:right;
+    padding-right:15px ;
+}

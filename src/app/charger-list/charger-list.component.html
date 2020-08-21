@@ -1,0 +1,26 @@
+<div class="charger-list-bg">
+
+    <h2 class="title">Nearest chargers:</h2>
+
+    <div class="charger-list-con">
+
+        <div *ngIf="loading" class="loading-con">
+            <div class="d-flex align-items-center">
+                <strong>Locating nearest chargers...</strong>
+                <div class="spinner-grow spin" role="status" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <div class="nodeListContainer">
+        
+            <app-child-node 
+                *ngFor="let node of nodes" 
+                [node]="node" 
+                [selectDetails]="selectedNodeDetail" 
+                (selectDetails)="nodeCallback($event)"></app-child-node>
+
+        </div>
+        
+    </div>
+
+</div>
